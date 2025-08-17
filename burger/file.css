@@ -1,0 +1,96 @@
+.top-container {
+  position: relative;   /* Needed for absolute positioning inside */
+  text-align: center;   /* Helps center elements like the mountain */
+  padding-top: 100px;
+}
+
+/* First image - top right */
+.top-cloud {
+  position: absolute;
+  top: 40px;   
+  right: 20px;
+  width: 100px;
+}
+.bottom-cloud {
+  position: absolute;
+  left: 20px;
+  bottom: 40px;   /* push it down */
+  width: 100px;
+}
+
+.middle-container{
+    position: relative;
+    padding-top: 100px;
+    background-color:red;
+}
+.profile {
+  text-align: center;         /* centers everything inside */
+  max-width: 500px;           /* keep text neat */
+  margin: 0 auto;             /* center block on page */
+}
+
+.profile img {
+  border-radius: 50%;
+  display: block;
+  height: 150px;
+  width: 150px;
+  margin: 0 auto 20px auto;
+}
+
+.intro {
+  white-space: pre-line;      /* respects line breaks in HTML source */
+  font-size: 18px;
+  line-height: 1.6;
+  color: beige;
+}
+
+h2{
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* layout: 2 columns per row (image | text) */
+.skills .parent{
+  display: grid;
+  grid-template-columns: auto 1fr; /* image column, text column */
+  column-gap: 24px;                 /* space between image and text */
+  row-gap: 28px;                    /* space between the two rows */
+  align-items: center;              /* vertically center image + text in each row */
+}
+
+/* make sure images size nicely and don't overflow */
+.skills .parent img {
+  width: 140px;   /* adjust this to taste */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* tighten text spacing */
+.skills .coding h3,
+.skills .hot-wings h3 {
+  margin: 0 0 8px 0;
+}
+
+.skills .coding p,
+.skills .hot-wings p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* responsive: stack into a single column on small screens */
+@media (max-width: 720px) {
+  .skills .parent {
+    grid-template-columns: 1fr; /* each element takes full width, stacked */
+    text-align: center;
+  }
+
+  /* center images when stacked */
+  .skills .parent img {
+    margin: 0 auto 12px;
+    width: 120px;
+  }
+}
